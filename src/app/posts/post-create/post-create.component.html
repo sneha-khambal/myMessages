@@ -3,19 +3,29 @@
   <mat-form-field >
     <input type="text"
      matInput 
-    ngModel>
-        </mat-form-field>
+     name="title"
+    ngModel
+    required
+    maxlength="20"
+    #title="ngModel"> 
+    <mat-error *ngIf="title.invalid">add proper title</mat-error>
+  </mat-form-field>
   <mat-form-field >
     <textarea
      matInput 
-     rows="6" 
-     ngModel>
+     rows="2" 
+     name="content"
+     ngModel
+     required
+    minlength="10"
+    #content="ngModel"
+     > </textarea>
+    <mat-error *ngIf="content.invalid">add proper content</mat-error>
 
-    </textarea>
     </mat-form-field>
  <button mat-raised-button
 color='primary'
-type="submit">Save Post</button>
+type="submit" >Save Post</button>
  </form>
 </mat-card>
  
